@@ -5,17 +5,17 @@
 
 # Nen
 
-A modern, ultra-fast file explorer for Windows built with GPUI.
+A modern, ultra-fast file explorer for Windows built with Tauri.
 
 </div>
 
 ## Scope
 
-Nen is an ultra-fast, keyboard-driven file explorer for Windows designed to be lightweight, instantaneous, and GPU-accelerated.
+Nen is an ultra-fast, keyboard-driven file explorer for Windows designed to be lightweight, instantaneous, and hardware-accelerated.
 
-On Windows, managing files usually forces you to choose between the sluggish, bloat-heavy native Explorer—plagued with UI freezes on large folders, delayed loading, and cluttered ribbons—or third-party alternatives built on Electron, WebViews, or heavy WinUI runtimes that consume hundreds of megabytes of RAM just to view a directory. Nen eliminates this friction with a unified, keyboard-first workflow built around an instant Quick Access command search and virtualized file listings, allowing you to jump between paths, filter thousands of items, and execute file operations with zero input latency.
+On Windows, managing files usually forces you to choose between the sluggish, bloat-heavy native Explorer—plagued with UI freezes on large folders, delayed loading, and cluttered ribbons—or third-party alternatives built on bloated Electron wrappers that consume hundreds of megabytes of RAM just to view a directory. Nen eliminates this friction with a unified, keyboard-first workflow built around an instant Quick Access command search and virtualized file listings, allowing you to jump between paths, filter thousands of items, and execute file operations with zero input latency.
 
-Because it is written in Rust and powered by GPUI, it renders directly through the GPU at 120+ FPS with near-instant cold startup and minimal RAM consumption, completely avoiding the runtime overhead of web technologies, heavy UI frameworks, and blocking disk I/O.
+Because it combines a native Rust core for asynchronous disk I/O and blazing-fast file traversal with a high-performance React and TypeScript frontend powered by Bun and Tailwind v4 on Tauri, Nen achieves near-instant cold startups, exceptionally low RAM consumption, and buttery-smooth UI interactions—completely avoiding the massive resource overhead of traditional web-technologies and heavy runtime frameworks.
 
 ## Development
 
@@ -48,7 +48,6 @@ Before submitting changes, ensure everything is formatted and lint-free:
 
 ## Acknowledgements
 
-- **[GPUI](https://github.com/zed-industries/zed)** – The high-performance, GPU-accelerated UI framework developed by [Zed Industries](https://zed.dev).
-- **[gpui-kit](https://github.com/longbridge/gpui-kit)** – Modern UI components and utilities for GPUI by Longbridge.
+- **[Tauri v2](https://v2.tauri.app/es/)** – Framework for creating small, fast binaries for major desktop and mobile platforms..
 - **[File Pilot](https://filepilot.tech/)** – Workflow and UX inspiration for an ultra-fast, keyboard-driven file manager.
 - **[Lucide Icons](https://lucide.dev/)** – Minimalist iconography.
