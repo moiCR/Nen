@@ -93,7 +93,10 @@ export function TitleBar({ onToggleSidebar }: TitleBarProps) {
           type="button"
           id="sidebar-toggle-btn"
           title="Collapse Sidebar"
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleSidebar?.();
+          }}
           className="flex items-center justify-center w-7 h-7 rounded-md text-text-secondary hover:text-text-primary hover:bg-ghost-hover active:bg-elevated-surface transition-colors cursor-pointer"
         >
           <PanelLeft className="w-4 h-4" />
@@ -142,4 +145,10 @@ export function TitleBar({ onToggleSidebar }: TitleBarProps) {
           title="Close"
           onClick={handleClose}
           className="flex items-center justify-center w-9 h-full text-text-secondary hover:text-white hover:bg-danger active:bg-danger/80 transition-colors cursor-pointer"
-      
+        >
+          <X className="w-4 h-4" />
+        </button>
+      </section>
+    </header>
+  );
+}
