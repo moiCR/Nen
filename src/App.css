@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./assets/fonts/GeistMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./assets/fonts/GeistMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./assets/fonts/GeistMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "Geist", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "Cascadia Code", monospace;
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-elevated-surface: var(--elevated-surface);
+  --color-overlay: var(--overlay);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-ghost-hover: var(--ghost-hover);
+  --color-selection: var(--selection);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-focused: var(--border-focused);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+}
+
+:root {
+  --background: #101010;
+  --surface: #242427;
+  --elevated-surface: #2d2d31;
+  --overlay: rgba(0, 0, 0, 0.5);
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-active: #2563eb;
+  --accent-foreground: #ffffff;
+
+  --ghost-hover: rgba(255, 255, 255, 0.063);
+  --selection: rgba(59, 130, 246, 0.25);
+
+  --border: #3f3f46;
+  --border-subtle: #27272a;
+  --border-focused: #60a5fa;
+
+  --success: #22c55e;
+  --warning: #eab308;
+  --danger: #ef4444;
+  --info: #06b6d4;
+}
+
+[data-theme="light"],
+.light {
+  /* Light Mode */
+  --background: #ffffff;
+  --surface: #f4f4f5;
+  --elevated-surface: #e4e4e7;
+  --overlay: rgba(0, 0, 0, 0.25);
+
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #a1a1aa;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-active: #1e40af;
+  --accent-foreground: #ffffff;
+
+  --ghost-hover: rgba(0, 0, 0, 0.04);
+  --selection: rgba(37, 99, 235, 0.15);
+
+  --border: #e4e4e7;
+  --border-subtle: #f4f4f5;
+  --border-focused: #2563eb;
+
+  --success: #16a34a;
+  --warning: #ca8a04;
+  --danger: #dc2626;
+  --info: #0891b2;
+}
+
+[data-theme="dark"],
+.dark {
+  /* Explicit Dark Mode */
+  --background: #18181b;
+  --surface: #242427;
+  --elevated-surface: #2d2d31;
+  --overlay: rgba(0, 0, 0, 0.5);
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-active: #2563eb;
+  --accent-foreground: #ffffff;
+
+  --ghost-hover: rgba(255, 255, 255, 0.063);
+  --selection: rgba(59, 130, 246, 0.25);
+
+  --border: #3f3f46;
+  --border-subtle: #27272a;
+  --border-focused: #60a5fa;
+
+  --success: #22c55e;
+  --warning: #eab308;
+  --danger: #ef4444;
+  --info: #06b6d4;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--text-primary);
+  user-select: none;
+  overflow: hidden;
+}
