@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
 import type { QueryClient } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "motion/react";
 import { TitleBar } from "../components/titlebar";
 import SideBar from "../components/sidebar";
+import { useKeybinds } from "../hooks/use-keybinds";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -16,19 +17,13 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 function RootComponent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "b") {
-        event.preventDefault();
-        setIsSidebarOpen((prev) => !prev);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  useKeybinds([
+    {
+      key: "b",
+      ctrl: true,
+      handler: () => setIsSidebarOpen((prev) => !prev),
+    },
+  ]);
 
   return (
     <div className="h-screen w-screen bg-background text-text-primary flex flex-col overflow-hidden select-none">
