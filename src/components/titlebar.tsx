@@ -8,6 +8,7 @@ import {
   Minimize2,
   X,
 } from "lucide-react";
+import { Button } from "./button";
 
 interface TitleBarProps {
   onToggleSidebar?: () => void;
@@ -80,27 +81,29 @@ export function TitleBar({ onToggleSidebar }: TitleBarProps) {
         data-tauri-drag-region
         className="flex flex-row items-center w-27 h-full px-2 gap-1"
       >
-        <button
-          type="button"
-          title="Show Menu"
+        <Button
+          variant="ghost"
+          size="icon-sm"
+          tooltip="Show Menu"
+          command="F10"
           onClick={(e) => e.stopPropagation()}
-          className="flex items-center justify-center w-7 h-7 rounded-md text-text-secondary hover:text-text-primary hover:bg-ghost-hover active:bg-elevated-surface transition-colors cursor-pointer"
         >
           <Menu className="w-4 h-4" />
-        </button>
+        </Button>
 
-        <button
-          type="button"
+        <Button
           id="sidebar-toggle-btn"
-          title="Collapse Sidebar"
+          variant="ghost"
+          size="icon-sm"
+          tooltip="Collapse Sidebar"
+          command="Ctrl+B"
           onClick={(e) => {
             e.stopPropagation();
             onToggleSidebar?.();
           }}
-          className="flex items-center justify-center w-7 h-7 rounded-md text-text-secondary hover:text-text-primary hover:bg-ghost-hover active:bg-elevated-surface transition-colors cursor-pointer"
         >
           <PanelLeft className="w-4 h-4" />
-        </button>
+        </Button>
       </section>
 
       <section
@@ -115,39 +118,39 @@ export function TitleBar({ onToggleSidebar }: TitleBarProps) {
         id="titlebar-right"
         className="flex flex-row items-center justify-end w-27 h-full"
       >
-        <button
-          type="button"
+        <Button
           id="window-minimize-btn"
-          title="Minimize"
+          variant="window-control"
+          size="window"
+          tooltip="Minimize"
           onClick={handleMinimize}
-          className="flex items-center justify-center w-9 h-full text-text-secondary hover:text-text-primary hover:bg-ghost-hover active:bg-selection transition-colors cursor-pointer"
         >
           <Minus className="w-4 h-4" />
-        </button>
+        </Button>
 
-        <button
-          type="button"
+        <Button
           id="window-maximize-btn"
-          title={isMaximized ? "Restore" : "Maximize"}
+          variant="window-control"
+          size="window"
+          tooltip={isMaximized ? "Restore" : "Maximize"}
           onClick={handleToggleMaximize}
-          className="flex items-center justify-center w-9 h-full text-text-secondary hover:text-text-primary hover:bg-ghost-hover active:bg-selection transition-colors cursor-pointer"
         >
           {isMaximized ? (
             <Minimize2 className="w-3.5 h-3.5" />
           ) : (
             <Maximize2 className="w-3.5 h-3.5" />
           )}
-        </button>
+        </Button>
 
-        <button
-          type="button"
+        <Button
           id="window-close-btn"
-          title="Close"
+          variant="window-close"
+          size="window"
+          tooltip="Close"
           onClick={handleClose}
-          className="flex items-center justify-center w-9 h-full text-text-secondary hover:text-white hover:bg-danger active:bg-danger/80 transition-colors cursor-pointer"
         >
           <X className="w-4 h-4" />
-        </button>
+        </Button>
       </section>
     </header>
   );
