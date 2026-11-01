@@ -14,6 +14,7 @@
 - Avoid unnecessary cloning and allocations in hot loops, IPC serialization, and file traversal.
 - Prefer descriptive names over abbreviations.
 - Keep functions focused on a single responsibility.
+- **Always use early returns (`if ... return` / `continue`) and guard clauses instead of `if / else` blocks.** Avoid `else` branches.
 - Run `cargo fmt` before finishing changes.
 - Keep `cargo clippy` free of warnings.
 - Don't write comments in the code. If strictly necessary, comments should explain **why**, never **what**.
@@ -23,6 +24,8 @@
 ## Frontend (React 19 & TypeScript - `src`)
 
 - Write strict, type-safe TypeScript (`noImplicitAny`, avoid `any`; use typed interfaces, discriminated unions, or `unknown` with type narrowing).
+- **Always use early returns (`if ... return` / `continue`) and guard clauses instead of `if / else` blocks.** Avoid `else` branches.
+- **Keep `import` statements compact on a single line** (or minimal lines only if super long). Never split every imported item onto its own vertical line.
 - **`render` Must Be Pure & Side-Effect Free**:
   - Keep rendering declarative. Never run business logic, IPC invokes, or state mutations inside component render bodies.
   - PROHIBITED inside render bodies: direct `invoke()`, side-effecting window manipulation, or unbounded state setters.
